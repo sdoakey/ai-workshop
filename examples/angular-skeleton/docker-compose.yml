@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  angular-skeleton:
+    build: .
+    container_name: angular-skeleton
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./src:/app/src
+      - ./angular.json:/app/angular.json
+    command: npm start -- --host 0.0.0.0 --poll 2000 --disable-host-check
+    restart: unless-stopped

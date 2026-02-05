@@ -1,0 +1,18 @@
+<div class="welcome-card">
+  <h2>{{ message }}</h2>
+  <div class="counter-section">
+    <p>This is a sample interactive component demonstrating Angular signals.</p>
+    <button class="counter-button" (click)="incrementCount()">
+      You clicked {{ count() }} {{ count() === 1 ? 'time' : 'times' }}
+    </button>
+    @if (count() > 0) {
+      <p class="counter-message">
+        @if (count() >= 10) {
+          Wow, you really like clicking!
+        } @else {
+          Keep clicking to see what happens!
+        }
+      </p>
+    }
+  </div>
+</div>
