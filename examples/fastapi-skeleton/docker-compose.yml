@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  fastapi-app:
+    build: .
+    container_name: fastapi-skeleton
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount the app directory for live code reloading during development
+      - ./app:/app/app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    restart: unless-stopped

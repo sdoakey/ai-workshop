@@ -23,6 +23,7 @@ Before starting the workshop, ensure you have the following installed and config
 - **JDK** (Java Development Kit for Java projects)
 - **Docker** and Docker Compose
 - **Visual Studio Code** with recommended extensions
+- **Git** commit early and often!
 
 ### Access Requirements
 - **GitHub account** with access to the cse-cst project
@@ -57,7 +58,7 @@ Every project, regardless of difficulty level, must meet these mandatory criteri
 
 You have **complete freedom** to choose your technology stack:
 
-- **Languages**: JavaScript/TypeScript, Python, Java, Go, C#, or any language you prefer
+- **Languages**: JavaScript/TypeScript, Python, Java, Go, or any language you prefer
 - **Frameworks**: React, Vue, Angular, Express, Flask, Django, Spring Boot, .NET, etc.
 - **Databases**: PostgreSQL, MySQL, MongoDB, Redis, etc.
 - **Additional tools**: Any libraries, frameworks, or tools that help you succeed
@@ -111,18 +112,6 @@ Enterprise-grade applications with complex architectures, real-time features, co
 - Implement user stories in priority order
 - Test incrementally as you build
 - Leave time for containerization and documentation
-
-## Evaluation
-
-Your project will be evaluated on:
-
-1. **Completeness**: All acceptance criteria implemented
-2. **Functionality**: Application works as specified
-3. **Code Quality**: Clean, maintainable, secure code
-4. **Testing**: Adequate test coverage and passing tests
-5. **Containerization**: Proper Docker setup with docker-compose
-6. **Documentation**: Clear setup and usage instructions
-7. **AI Utilization**: Effective use of AI tools in development
 
 ## Support and Resources
 
