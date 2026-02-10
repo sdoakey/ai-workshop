@@ -100,7 +100,29 @@ Health Check: `http://localhost:8080/actuator/health`
 
 ---
 
-#### 5. Go Skeleton (`go-skeleton/`)
+#### 5. Express.js Skeleton (`express-skeleton/`)
+A minimal Express.js application built with TypeScript.
+
+**Tech Stack:**
+- Express.js with TypeScript
+- Hot-reload enabled (tsx watch)
+- Docker support
+
+**Quick Start:**
+```bash
+cd express-skeleton
+npm install
+npm run dev
+```
+
+Access at: `http://localhost:3000`
+Health Check: `http://localhost:3000/health`
+
+[View detailed README](express-skeleton/README.md)
+
+---
+
+#### 6. Go Skeleton (`go-skeleton/`)
 A minimal Go REST API application template.
 
 **Tech Stack:**
@@ -123,7 +145,7 @@ Health Check: `http://localhost:8080/health`
 
 ---
 
-#### 6. Rust Skeleton (`rust-skeleton/`)
+#### 7. Rust Skeleton (`rust-skeleton/`)
 A minimal Rust REST API application template.
 
 **Tech Stack:**
@@ -195,6 +217,7 @@ These skeletons are designed to work seamlessly with AI-assisted development too
 
 - **FastAPI** - Choose if you want a modern Python framework with automatic API documentation
 - **Spring Boot** - Choose if you want a mature Java framework with enterprise-grade features
+- **Express.js** - Choose if you want a flexible, widely-used Node.js framework with TypeScript support
 - **Go** - Choose if you want a high-performance, compiled language with minimal dependencies and small container images
 - **Rust** - Choose if you want maximum performance with memory safety guarantees and zero-cost abstractions
 
@@ -216,6 +239,7 @@ These skeletons are designed to work seamlessly with AI-assisted development too
 ### Backend Skeletons
 - **FastAPI**: Python 3.11+, Docker (optional)
 - **Spring Boot**: Java 21 JDK, Docker (optional)
+- **Express.js**: Node.js 20+, npm, Docker (optional)
 - **Go**: Go 1.23+, Docker (optional)
 - **Rust**: Rust 1.84+ and Cargo, Docker (optional)
 
