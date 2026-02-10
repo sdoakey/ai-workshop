@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  svelte-skeleton:
+    build: .
+    container_name: svelte-skeleton
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./src:/app/src
+      - ./static:/app/static
+      - ./svelte.config.js:/app/svelte.config.js
+      - ./vite.config.ts:/app/vite.config.ts
+    command: npm run dev -- --host 0.0.0.0
+    restart: unless-stopped
