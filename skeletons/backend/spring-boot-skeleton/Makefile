@@ -4,7 +4,7 @@
 .DEFAULT_GOAL := help
 
 # Maven configuration
-MVN := ./mvnw
+MVN := mvn
 JAVA_VERSION := 21
 
 # Colors for output

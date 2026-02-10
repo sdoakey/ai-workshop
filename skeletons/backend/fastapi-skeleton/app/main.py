@@ -1,7 +1,7 @@
 """
 FastAPI Application Entry Point
 
-This is a minimal FastAPI application with no endpoints defined.
+This is a minimal FastAPI application with a health check endpoint.
 Use this as a starting point to add your own endpoints and functionality.
 """
 
@@ -30,3 +30,12 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan
 )
+
+
+@app.get("/health")
+async def health_check():
+    """Returns the current health status of the application."""
+    return {
+        "status": "healthy",
+        "message": "FastAPI REST API application is running",
+    }
