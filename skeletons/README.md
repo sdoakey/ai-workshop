@@ -50,9 +50,31 @@ Access at: `http://localhost:4200`
 
 ---
 
+#### 3. Vue Skeleton (`vue-skeleton/`)
+A minimal Vue application built with Vite and TypeScript.
+
+**Tech Stack:**
+- Vue 3 with TypeScript and Composition API
+- Vite for fast development and optimized builds
+- Hot Module Replacement (HMR)
+- Docker support
+
+**Quick Start:**
+```bash
+cd vue-skeleton
+npm install
+npm run dev
+```
+
+Access at: `http://localhost:5174`
+
+[View detailed README](vue-skeleton/README.md)
+
+---
+
 ### Backend Frameworks
 
-#### 3. FastAPI Skeleton (`fastapi-skeleton/`)
+#### 4. FastAPI Skeleton (`fastapi-skeleton/`)
 A minimal Python FastAPI application template.
 
 **Tech Stack:**
@@ -78,7 +100,7 @@ API Docs: `http://localhost:8000/docs`
 
 ---
 
-#### 4. Spring Boot Skeleton (`spring-boot-skeleton/`)
+#### 5. Spring Boot Skeleton (`spring-boot-skeleton/`)
 A minimal Java Spring Boot application template.
 
 **Tech Stack:**
@@ -100,7 +122,7 @@ Health Check: `http://localhost:8080/actuator/health`
 
 ---
 
-#### 5. Express.js Skeleton (`express-skeleton/`)
+#### 6. Express.js Skeleton (`express-skeleton/`)
 A minimal Express.js application built with TypeScript.
 
 **Tech Stack:**
@@ -122,7 +144,7 @@ Health Check: `http://localhost:3000/health`
 
 ---
 
-#### 6. Go Skeleton (`go-skeleton/`)
+#### 7. Go Skeleton (`go-skeleton/`)
 A minimal Go REST API application template.
 
 **Tech Stack:**
@@ -145,7 +167,7 @@ Health Check: `http://localhost:8080/health`
 
 ---
 
-#### 7. Rust Skeleton (`rust-skeleton/`)
+#### 8. Rust Skeleton (`rust-skeleton/`)
 A minimal Rust REST API application template.
 
 **Tech Stack:**
@@ -212,6 +234,7 @@ These skeletons are designed to work seamlessly with AI-assisted development too
 
 - **React** - Choose if you want a flexible, component-based library with a large ecosystem
 - **Angular** - Choose if you want a comprehensive framework with opinionated structure and built-in solutions
+- **Vue** - Choose if you want a progressive, approachable framework with excellent TypeScript support and Composition API
 
 ### Backend Development
 
