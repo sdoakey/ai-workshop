@@ -1,4 +1,4 @@
-# Simple Expense Tracker
+s# Simple Expense Tracker
 
 ## System Description
 A lightweight expense tracking application that allows users to log daily expenses, categorize them, and view spending summaries. The application provides basic reporting on spending patterns.
