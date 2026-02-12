@@ -1,0 +1,11 @@
+micronaut:
+  application:
+    name: skeleton
+  server:
+    port: ${PORT:8080}
+  
+# Management endpoints configuration
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
