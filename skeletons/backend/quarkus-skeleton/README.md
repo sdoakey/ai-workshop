@@ -4,7 +4,7 @@ A minimal Quarkus application template with no custom endpoints defined. This se
 
 ## Features
 
-- ✅ Quarkus 3.17.5 with Java 21
+- ✅ Quarkus 3.20.1 with Java 21
 - ✅ SmallRye Health for health check endpoints
 - ✅ RESTEasy Reactive (JAX-RS) for REST endpoints
 - ✅ Jackson for JSON serialization

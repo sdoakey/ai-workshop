@@ -10,7 +10,7 @@ COPY mvnw .
 RUN chmod +x mvnw
 
 # Download dependencies (cached layer)
-RUN ./mvnw dependency:resolve -B
+RUN ./mvnw dependency:go-offline -B
 
 # Copy source code and build
 COPY src src

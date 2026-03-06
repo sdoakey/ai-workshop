@@ -1,5 +1,5 @@
 # Build stage
-FROM golang:1.23-alpine AS builder
+FROM golang:1.25-alpine AS builder
 
 # Set working directory
 WORKDIR /app
@@ -17,7 +17,9 @@ COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build -o server ./cmd/server
 
 # Runtime stage
-FROM alpine:3.20
+FROM alpine:3.22
+
+RUN apk add --no-cache ca-certificates
 
 # Set working directory
 WORKDIR /app

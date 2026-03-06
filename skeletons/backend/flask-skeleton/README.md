@@ -14,7 +14,7 @@ A minimal Flask application template with a health check endpoint. This serves a
 
 ## Prerequisites
 
-- Python 3.11+ (for local development)
+- Python 3.12+ (for local development)
 - Docker and Docker Compose (for containerized deployment)
 
 ## Quick Start

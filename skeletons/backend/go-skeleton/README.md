@@ -13,7 +13,7 @@ A minimal Go REST API application template with no endpoints defined. This serve
 
 ## Prerequisites
 
-- Go 1.23+ (for local development)
+- Go 1.25+ (for local development)
 - Docker and Docker Compose (for containerized deployment)
 
 ## Setup and Installation

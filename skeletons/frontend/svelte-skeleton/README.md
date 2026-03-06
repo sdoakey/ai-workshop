@@ -16,7 +16,7 @@ A minimal SvelteKit application built with Svelte 5 and TypeScript. This serves 
 
 ## Prerequisites
 
-- Node.js 20+ (for local development)
+- Node.js 22+ (for local development)
 - npm or yarn package manager
 - Docker and Docker Compose (for containerized deployment)
 

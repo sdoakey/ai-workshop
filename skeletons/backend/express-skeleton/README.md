@@ -12,7 +12,7 @@ A minimal Express.js application built with TypeScript. This serves as a startin
 
 ## Prerequisites
 
-- Node.js 20+ (for local development)
+- Node.js 22+ (for local development)
 - npm or yarn package manager
 - Docker and Docker Compose (for containerized deployment)
 

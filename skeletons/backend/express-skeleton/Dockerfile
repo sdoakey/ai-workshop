@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM node:22-alpine AS builder
 
 WORKDIR /app
 
@@ -6,13 +6,24 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm ci
 
 # Copy application code
 COPY . .
 
 # Build TypeScript
 RUN npm run build
+
+FROM node:22-alpine
+
+WORKDIR /app
+
+# Copy package files for production install
+COPY package*.json ./
+RUN npm ci --omit=dev
+
+# Copy compiled application
+COPY --from=builder /app/dist ./dist
 
 # Expose port 3000
 EXPOSE 3000

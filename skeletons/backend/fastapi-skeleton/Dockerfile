@@ -1,5 +1,8 @@
 # Use official Python runtime as base image
-FROM python:3.11-slim
+FROM python:3.13-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+	PYTHONUNBUFFERED=1
 
 # Set working directory in container
 WORKDIR /app
@@ -8,7 +11,8 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN python -m pip install --upgrade pip \
+	&& pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY . .

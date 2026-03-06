@@ -5,7 +5,7 @@
  * Use this as a starting point to add your own endpoints and functionality.
  */
 
-use actix_web::{App, HttpServer, web};
+use actix_web::{App, HttpServer};
 use log::info;
 use std::env;
 

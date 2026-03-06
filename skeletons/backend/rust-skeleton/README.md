@@ -14,7 +14,7 @@ A minimal Rust REST API application template with no endpoints defined. This ser
 
 ## Prerequisites
 
-- Rust 1.84+ and Cargo (for local development)
+- Rust 1.93+ and Cargo (for local development)
 - Docker and Docker Compose (for containerized deployment)
 
 ## Setup and Installation

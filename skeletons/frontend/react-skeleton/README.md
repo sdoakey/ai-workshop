@@ -4,7 +4,7 @@ A minimal React application built with Vite and TypeScript. This serves as a sta
 
 ## Features
 
-- ✅ React 18 with TypeScript
+- ✅ React 19 with TypeScript
 - ✅ Vite for fast development and optimized builds
 - ✅ Hot Module Replacement (HMR) enabled
 - ✅ Plain CSS with organized structure
@@ -14,7 +14,7 @@ A minimal React application built with Vite and TypeScript. This serves as a sta
 
 ## Prerequisites
 
-- Node.js 20+ (for local development)
+- Node.js 22+ (for local development)
 - npm or yarn package manager
 - Docker and Docker Compose (for containerized deployment)
 
@@ -281,10 +281,10 @@ Check your Node.js version:
 node --version
 ```
 
-This project requires Node.js 20 or higher. Update Node.js if needed:
+This project requires Node.js 22 or higher. Update Node.js if needed:
 
-- Use [nvm](https://github.com/nvm-sh/nvm): `nvm install 20 && nvm use 20`
-- Use [volta](https://volta.sh/): `volta install node@20`
+- Use [nvm](https://github.com/nvm-sh/nvm): `nvm install 22 && nvm use 22`
+- Use [volta](https://volta.sh/): `volta install node@22`
 - Download from [nodejs.org](https://nodejs.org/)
 
 ### Module Not Found Errors

@@ -4,7 +4,7 @@ A minimal Micronaut application template with a health check endpoint. This serv
 
 ## Features
 
-- ✅ Micronaut 4.7.5 with Java 21
+- ✅ Micronaut 4.8.3 with Java 21
 - ✅ Health check endpoint at `/health`
 - ✅ Micronaut Management for production-ready features
 - ✅ Maven wrapper (no Maven installation required)
