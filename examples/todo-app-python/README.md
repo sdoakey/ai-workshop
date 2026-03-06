@@ -1,28 +1,19 @@
 # Todo List Application
 
-## Prerequisites
-
-- Docker and Docker Compose
-
-## Run with Docker
-
-```bash
-cd examples/todo-app-python
-docker-compose up --build
-```
-
-Open http://localhost:5000.
-
 ## Run Locally (with live reload)
 
 ```bash
 cd examples/todo-app-python
 
-# Start the database only
-docker-compose up postgres -d
+# Create and source virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Start the database only
+docker-compose up  -d
 
 # Run the app
 python app.py
