@@ -4,7 +4,7 @@ A minimal Angular application built with TypeScript. This serves as a starting p
 
 ## Features
 
-- ✅ Angular 20 (LTS) with standalone components
+- ✅ Angular 21 with standalone components
 - ✅ TypeScript strict mode
 - ✅ Live reload for fast development
 - ✅ Angular Signals for reactive state management
@@ -14,7 +14,7 @@ A minimal Angular application built with TypeScript. This serves as a starting p
 
 ## Prerequisites
 
-- Node.js 20+ (for local development)
+- Node.js 20.19+, 22.12+, or 24+ (for local development)
 - npm or yarn package manager
 - Docker and Docker Compose (for containerized deployment)
 
