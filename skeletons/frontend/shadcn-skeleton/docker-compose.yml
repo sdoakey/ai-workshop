@@ -1,0 +1,15 @@
+services:
+  shadcn-skeleton:
+    build: .
+    container_name: shadcn-skeleton
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./next.config.ts:/app/next.config.ts
+      - ./components.json:/app/components.json
+    environment:
+      - WATCHPACK_POLLING=true
+    command: npm run dev
+    restart: unless-stopped
