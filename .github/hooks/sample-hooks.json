@@ -1,0 +1,56 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "./.github/hooks/scripts/hook-logger.sh"
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "type": "command",
+        "command": "./.github/hooks/scripts/pii-checker.sh"
+      },
+      {
+        "type": "command",
+        "command": "./.github/hooks/scripts/hook-logger.sh"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "type": "command",
+        "command": "./.github/hooks/scripts/hook-logger.sh"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "type": "command",
+        "command": "./.github/hooks/scripts/hook-logger.sh"
+      }
+    ],
+    "PreCompact": [
+      {
+        "type": "command",
+        "command": "./.github/hooks/scripts/hook-logger.sh"
+      }
+    ],
+    "SubagentStart": [
+      {
+        "type": "command",
+        "command": "./.github/hooks/scripts/hook-logger.sh"
+      }
+    ],
+    "SubagentStop": [
+      {
+        "type": "command",
+        "command": "./.github/hooks/scripts/hook-logger.sh"
+      }
+    ],
+    "Stop": [
+      {
+        "type": "command",
+        "command": "./.github/hooks/scripts/hook-logger.sh"
+      }
+    ]
+  }
+}
