@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>.github AI Customization Layout - Slide Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f7f3e9;
+      --bg-soft: #efe7d6;
+      --text: #172033;
+      --muted: #4f5b73;
+      --accent: #0c7c59;
+      --accent-2: #d94f30;
+      --card: #fffdf7;
+      --border: #d8cfbd;
+      --shadow: 0 20px 50px rgba(23, 32, 51, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: radial-gradient(circle at 10% 20%, #fff7df 0%, var(--bg) 50%, #f1e8d4 100%);
+      color: var(--text);
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      z-index: 0;
+      pointer-events: none;
+      border-radius: 999px;
+      filter: blur(0.5px);
+    }
+
+    body::before {
+      width: 38vw;
+      height: 38vw;
+      min-width: 320px;
+      min-height: 320px;
+      top: -12vw;
+      right: -10vw;
+      background: rgba(12, 124, 89, 0.1);
+    }
+
+    body::after {
+      width: 30vw;
+      height: 30vw;
+      min-width: 260px;
+      min-height: 260px;
+      bottom: -12vw;
+      left: -10vw;
+      background: rgba(217, 79, 48, 0.1);
+    }
+
+    .deck {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+    }
+
+    .slide {
+      width: min(1100px, 92vw);
+      height: min(680px, 86vh);
+      background: linear-gradient(145deg, var(--card) 0%, #fffaf0 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: clamp(1.5rem, 2.7vw, 2.8rem);
+      display: none;
+      grid-template-rows: auto 1fr auto;
+      gap: 0.8rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide.active {
+      display: grid;
+      animation: slideIn 320ms ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.99);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .slide::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      bottom: -40px;
+      width: 180px;
+      height: 180px;
+      border-radius: 28px;
+      background: linear-gradient(130deg, rgba(12, 124, 89, 0.14), rgba(217, 79, 48, 0.08));
+      transform: rotate(20deg);
+    }
+
+    .eyebrow {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      font-family: "Fraunces", Georgia, serif;
+      line-height: 1.1;
+      max-width: 90%;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+    }
+
+    p,
+    li {
+      font-size: clamp(1.15rem, 1.9vw, 1.42rem);
+      line-height: 1.45;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: clamp(1.08rem, 1.6vw, 1.3rem);
+      max-width: 74ch;
+    }
+
+    .content {
+      display: grid;
+      align-content: start;
+      gap: 1rem;
+      padding-top: 0.5rem;
+      z-index: 2;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .codeblock {
+      font-family: "IBM Plex Mono", "Consolas", monospace;
+      font-size: clamp(1rem, 1.35vw, 1.16rem);
+      background: #f4eddf;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      white-space: pre;
+      color: #263148;
+      max-width: fit-content;
+    }
+
+    .grid-roles {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .role-card {
+      border: 1px solid var(--border);
+      background: #fffcf3;
+      border-radius: 14px;
+      padding: 0.8rem 0.9rem;
+    }
+
+    .role-card h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.16rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .role-card p {
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+
+    .callout {
+      border-left: 4px solid var(--accent-2);
+      background: #fff2e7;
+      border-radius: 8px;
+      padding: 0.7rem 0.9rem;
+      color: #6b2b18;
+      font-size: 1.12rem;
+      max-width: 90ch;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      color: var(--muted);
+      z-index: 2;
+    }
+
+    .footer .hint {
+      font-size: 1rem;
+    }
+
+    .controls {
+      position: fixed;
+      z-index: 3;
+      right: 1.2rem;
+      bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 253, 247, 0.95);
+      border: 1px solid var(--border);
+      padding: 0.45rem;
+      border-radius: 999px;
+      box-shadow: 0 8px 20px rgba(23, 32, 51, 0.12);
+    }
+
+    button {
+      border: 0;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 999px;
+      padding: 0.45rem 0.85rem;
+      cursor: pointer;
+      transition: transform 120ms ease, background 120ms ease;
+    }
+
+    button:hover {
+      background: #0a6549;
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      background: #b8c2bb;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .counter {
+      font-weight: 600;
+      color: var(--text);
+      min-width: 4.1rem;
+      text-align: center;
+      font-size: 1.05rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e8f5ef;
+      color: #0a6849;
+      border: 1px solid #badfcd;
+      border-radius: 999px;
+      padding: 0.2rem 0.6rem;
+      font-size: 1rem;
+      margin-right: 0.3rem;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 860px) {
+      .deck {
+        padding: 1rem;
+      }
+
+      .slide {
+        width: 95vw;
+        height: 90vh;
+        border-radius: 18px;
+      }
+
+      .grid-roles {
+        grid-template-columns: 1fr;
+      }
+
+      .footer .hint {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck" aria-live="polite">
+    <section class="slide active" data-title="Title">
+      <header>
+        <p class="eyebrow">AI Repository Standards</p>
+        <h1>.github AI Customization Layout</h1>
+      </header>
+      <div class="content">
+        <p class="subtitle">A practical layout for repository-scoped AI assets: agents, skills, prompts, hooks, and instructions.</p>
+        <div>
+          <span class="tag">agents</span>
+          <span class="tag">skills</span>
+          <span class="tag">prompts</span>
+          <span class="tag">hooks</span>
+          <span class="tag">instructions</span>
+        </div>
+      </div>
+      <footer class="footer">
+        <span>Workshop Repo: ai-workshop</span>
+        <span class="hint">Use Left/Right arrows, Space, or buttons.</span>
+      </footer>
+    </section>
+
+    <section class="slide" data-title="Structure">
+      <header>
+        <p class="eyebrow">Conventional Structure</p>
+        <h2>Recommended .github Layout</h2>
+      </header>
+      <div class="content">
+        <div class="codeblock">.github/
+|-- agents/
+|-- skills/
+|-- prompts/
+|-- hooks/
+`-- instructions/</div>
+        <p class="subtitle">Not every repository needs every folder on day one, but this is the conventional layout to grow into.</p>
+      </div>
+      <footer class="footer">
+        <span>Keep structure intentional and discoverable.</span>
+        <span class="hint">Slide 2</span>
+      </footer>
+    </section>
+
+    <section class="slide" data-title="Roles Overview">
+      <header>
+        <p class="eyebrow">Directory Roles</p>
+        <h2>What Each Folder Is Responsible For</h2>
+      </header>
+      <div class="content">
+        <div class="grid-roles">
+          <article class="role-card">
+            <h3>agents/</h3>
+            <p>Specialized agent personas or modes for repeatable task types.</p>
+          </article>
+          <article class="role-card">
+            <h3>skills/</h3>
+            <p>Operational playbooks with triggers, guardrails, and workflows.</p>
+          </article>
+          <article class="role-card">
+            <h3>prompts/</h3>
+            <p>Reusable prompt templates for focused generation or analysis.</p>
+          </article>
+          <article class="role-card">
+            <h3>hooks/</h3>
+            <p>Automation scripts for safety checks, policy, and logging.</p>
+          </article>
+          <article class="role-card">
+            <h3>instructions/</h3>
+            <p>Repository rules that shape agent behavior and boundaries.</p>
+          </article>
+        </div>
+      </div>
+      <footer class="footer">
+        <span>Five folders, five distinct responsibilities.</span>
+        <span class="hint">Slide 3</span>
+      </footer>
+    </section>
+
+    <section class="slide" data-title="Agents">
+      <header>
+        <p class="eyebrow">agents/</p>
+        <h2>Task-Specific Agent Modes</h2>
+      </header>
+      <div class="content">
+        <p class="subtitle">Defines reusable agent personas or modes for specialized tasks.</p>
+        <ul>
+          <li>Typical naming: &lt;task-name&gt;.agent.md</li>
+          <li>Common contents: mission/scope, guardrails, expected outputs</li>
+          <li>Examples in this repo: python-review.agent.md, security-audit.agent.md</li>
+        </ul>
+      </div>
+      <footer class="footer">
+        <span>Goal: predictable behavior per task category.</span>
+        <span class="hint">Slide 4</span>
+      </footer>
+    </section>
+
+    <section class="slide" data-title="Skills">
+      <header>
+        <p class="eyebrow">skills/</p>
+        <h2>Workflow Playbooks</h2>
+      </header>
+      <div class="content">
+        <p class="subtitle">Contains domain workflows the agent can invoke for repeatable, multi-step tasks.</p>
+        <ul>
+          <li>Typical layout: one folder per skill, each with SKILL.md</li>
+          <li>Path pattern: skills/&lt;skill-name&gt;/SKILL.md</li>
+          <li>Include: triggers, use/non-use criteria, inputs, procedure, outputs</li>
+          <li>Example: skills/create-skeleton/SKILL.md</li>
+        </ul>
+      </div>
+      <footer class="footer">
+        <span>Goal: operational consistency and fewer ad-hoc runs.</span>
+        <span class="hint">Slide 5</span>
+      </footer>
+    </section>
+
+    <section class="slide" data-title="Prompts">
+      <header>
+        <p class="eyebrow">prompts/</p>
+        <h2>Reusable Prompt Templates</h2>
+      </header>
+      <div class="content">
+        <p class="subtitle">Stores reusable prompt templates for focused analyses or generation tasks.</p>
+        <ul>
+          <li>Typical naming: &lt;task-name&gt;.prompt.md</li>
+          <li>Common contents: role framing, task instructions, output checklist</li>
+          <li>Example: security-review.prompt.md</li>
+        </ul>
+      </div>
+      <footer class="footer">
+        <span>Goal: high-quality prompts with repeatable outcomes.</span>
+        <span class="hint">Slide 6</span>
+      </footer>
+    </section>
+
+    <section class="slide" data-title="Hooks">
+      <header>
+        <p class="eyebrow">hooks/</p>
+        <h2>Policy and Safety Automation</h2>
+      </header>
+      <div class="content">
+        <p class="subtitle">Automation scripts and policies that run around agent workflows.</p>
+        <ul>
+          <li>Typical layout: scripts under hooks/scripts/</li>
+          <li>Use cases: PII checks, policy enforcement, telemetry/logging</li>
+          <li>Examples: hook-logger.sh, pii-checker.sh</li>
+        </ul>
+      </div>
+      <footer class="footer">
+        <span>Goal: shift governance left without manual burden.</span>
+        <span class="hint">Slide 7</span>
+      </footer>
+    </section>
+
+    <section class="slide" data-title="Instructions">
+      <header>
+        <p class="eyebrow">instructions/</p>
+        <h2>Repository Rules for Agent Behavior</h2>
+      </header>
+      <div class="content">
+        <ul>
+          <li>Typical naming: *.instructions.md for scoped guidance</li>
+          <li>Broader guidance often lives in copilot-instructions.md or AGENTS.md</li>
+          <li>Common contents: coding conventions, architecture boundaries, test expectations, safety constraints</li>
+        </ul>
+        <p class="callout">Current repo note: top-level AGENTS.md is the primary guidance source. Add .github/instructions/ when scoped instructions become necessary.</p>
+      </div>
+      <footer class="footer">
+        <span>Goal: make behavior explicit, local, and auditable.</span>
+        <span class="hint">Slide 8</span>
+      </footer>
+    </section>
+
+    <section class="slide" data-title="Conventions">
+      <header>
+        <p class="eyebrow">Naming + Authoring</p>
+        <h2>Conventions That Keep Things Maintainable</h2>
+      </header>
+      <div class="content">
+        <ul>
+          <li>Use lowercase kebab-case names.</li>
+          <li>Prefer explicit task-oriented names (security-audit, create-skeleton).</li>
+          <li>Keep one concern per file.</li>
+          <li>Document trigger phrases and include do-not-use-when guidance.</li>
+          <li>Edit in place to version behavior; avoid duplicate variants unless experimental.</li>
+        </ul>
+      </div>
+      <footer class="footer">
+        <span>Simple conventions reduce drift over time.</span>
+        <span class="hint">Slide 9</span>
+      </footer>
+    </section>
+
+    <section class="slide" data-title="System View">
+      <header>
+        <p class="eyebrow">How It Works Together</p>
+        <h2>Composable AI Workflow Architecture</h2>
+      </header>
+      <div class="content">
+        <ul>
+          <li>instructions define repository rules and constraints.</li>
+          <li>agents define specialized modes.</li>
+          <li>skills define execution playbooks.</li>
+          <li>prompts define reusable task templates.</li>
+          <li>hooks enforce safety and policy before/after execution.</li>
+        </ul>
+        <p class="subtitle">Together they provide consistent, auditable AI-assisted development workflows.</p>
+      </div>
+      <footer class="footer">
+        <span>Thank you.</span>
+        <span class="hint">Slide 10</span>
+      </footer>
+    </section>
+  </main>
+
+  <nav class="controls" aria-label="Slide controls">
+    <button id="prev" type="button" aria-label="Previous slide">Prev</button>
+    <span class="counter" id="counter">1 / 10</span>
+    <button id="next" type="button" aria-label="Next slide">Next</button>
+  </nav>
+
+  <script>
+    (function () {
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      const prevBtn = document.getElementById('prev');
+      const nextBtn = document.getElementById('next');
+      const counter = document.getElementById('counter');
+      let index = 0;
+
+      function render() {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+
+        counter.textContent = (index + 1) + ' / ' + slides.length;
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index === slides.length - 1;
+      }
+
+      function next() {
+        index = Math.min(index + 1, slides.length - 1);
+        render();
+      }
+
+      function prev() {
+        index = Math.max(index - 1, 0);
+        render();
+      }
+
+      prevBtn.addEventListener('click', prev);
+      nextBtn.addEventListener('click', next);
+
+      window.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') {
+          event.preventDefault();
+          next();
+        }
+
+        if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+          event.preventDefault();
+          prev();
+        }
+
+        if (event.key === 'Home') {
+          index = 0;
+          render();
+        }
+
+        if (event.key === 'End') {
+          index = slides.length - 1;
+          render();
+        }
+      });
+
+      render();
+    })();
+  </script>
+</body>
+</html>
