@@ -1,0 +1,15 @@
+services:
+  servlet-app:
+    build:
+      context: .
+      target: dev
+    container_name: servlet-skeleton
+    environment:
+      - PORT=8080
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./src:/app/src
+      - ./pom.xml:/app/pom.xml
+    command: mvn jetty:run
+    restart: unless-stopped
